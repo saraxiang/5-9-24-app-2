@@ -25,6 +25,7 @@ export default function Home() {
     }
 
     fetchFlashcards();
+  // Adding an empty dependency array to ensure fetchFlashcards is only called once
   }, []);
 
   return (
