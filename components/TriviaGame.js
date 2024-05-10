@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import confetti from 'canvas-confetti';
 
 const TriviaGame = () => {
   // Dummy data for trivia questions
@@ -19,7 +20,12 @@ const TriviaGame = () => {
     // Check if the answer is correct
     if (option === questions[currentQuestionIndex].answer) {
       setScore(score + 1);
-      // Here we will add the animation for correct answer later
+      // Trigger confetti animation for correct answer
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
     }
 
     // Save the answer
