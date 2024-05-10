@@ -1,3 +1,4 @@
+/* @client */
 import { useState } from 'react';
 import confetti from 'canvas-confetti';
 

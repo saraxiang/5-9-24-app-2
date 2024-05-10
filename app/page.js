@@ -1,4 +1,6 @@
+"use client"
 import { useState } from 'react';
+import TriviaGame from '../components/TriviaGame'; // Import the TriviaGame component
 
 export default function Home() {
   const [name, setName] = useState('');
@@ -24,6 +26,8 @@ export default function Home() {
       >
         Start Game
       </button>
+      {/* Render the TriviaGame component only if a name has been entered */}
+      {name && <TriviaGame />}
     </main>
   );
 }
