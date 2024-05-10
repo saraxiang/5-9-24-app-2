@@ -51,7 +51,7 @@ export function POST(req, res) {
     console.error('Error stack:', error.stack);
 
     // Send a response to indicate an internal server error
-    res.status(500).json({ message: 'Internal Server Error', error: error.message });
+    res.status(500).json({ message: 'Internal Server Error', error: error.message, stack: error.stack });
   }
 }
 
