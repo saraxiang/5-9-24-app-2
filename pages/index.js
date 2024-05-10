@@ -14,6 +14,10 @@ export default function Home() {
         }
         const data = await response.json();
         console.log('Data received:', data);
+        // Log the structure of the first flashcard object
+        if (data.length > 0) {
+          console.log('Structure of the first flashcard:', Object.keys(data[0]));
+        }
         setFlashcards(data);
       } catch (error) {
         console.log('Error fetching data:', error);
@@ -29,8 +33,8 @@ export default function Home() {
       <main className="flex flex-col items-center justify-center p-24">
         <h1 className="text-4xl font-bold mb-6">All Flashcards</h1>
         <div className="grid grid-cols-3 gap-4">
-          {flashcards.map((flashcard) => (
-            <div key={flashcard.id} className="card">
+          {flashcards.map((flashcard, index) => (
+            <div key={index} className="card">
               <div className="card-front">{flashcard.front}</div>
               <div className="card-back">{flashcard.back}</div>
             </div>
