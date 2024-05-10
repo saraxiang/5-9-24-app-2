@@ -4,6 +4,7 @@ import confetti from 'canvas-confetti';
 const TriviaQuestions = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [userAnswers, setUserAnswers] = useState([]);
+  const [score, setScore] = useState(0); // Added state to track the score
   const [questions, setQuestions] = useState([
     // Dummy data for questions
     {
@@ -24,6 +25,7 @@ const TriviaQuestions = () => {
         spread: 70,
         origin: { y: 0.6 }
       });
+      setScore(score + 1); // Increment score if the answer is correct
     }
 
     // Save the user's answer
@@ -43,6 +45,8 @@ const TriviaQuestions = () => {
           </li>
         ))}
       </ul>
+      {/* Display the current score */}
+      <p>Your score: {score}/{currentQuestionIndex}</p>
     </div>
   );
 };
