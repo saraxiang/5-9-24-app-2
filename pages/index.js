@@ -6,9 +6,18 @@ export default function Home() {
 
   useEffect(() => {
     async function fetchFlashcards() {
-      const response = await fetch('/api/flashcards');
-      const data = await response.json();
-      setFlashcards(data);
+      console.log('Fetching flashcards...');
+      try {
+        const response = await fetch('/api/flashcards');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log('Data received:', data);
+        setFlashcards(data);
+      } catch (error) {
+        console.log('Error fetching data:', error);
+      }
     }
 
     fetchFlashcards();
