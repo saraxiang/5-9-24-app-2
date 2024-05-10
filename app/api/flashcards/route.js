@@ -12,6 +12,12 @@ export function POST(req, res) {
   // Additional detailed logging to inspect the req.body
   console.log('Detailed req.body logging:', JSON.stringify(req.body, null, 2));
 
+  // Check if the Content-Type header is set to 'application/json'
+  if (req.headers['content-type'] !== 'application/json') {
+    console.error('Incorrect Content-Type header.');
+    return res.status(400).json({ message: 'Bad Request: Content-Type header must be application/json.' });
+  }
+
   // Check if the request body is parsed correctly
   if (!req.body) {
     console.error('Request body is undefined.');
