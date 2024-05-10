@@ -6,14 +6,10 @@ const Navigation = () => {
     <nav className={styles.navbar}>
       <ul className={styles.navList}>
         <li className={styles.navItem}>
-          <Link href="/">
-            <a className={styles.navLink}>Play Game</a>
-          </Link>
+          <Link href="/" className={styles.navLink}>Play Game</Link>
         </li>
         <li className={styles.navItem}>
-          <Link href="/leaderboard">
-            <a className={styles.navLink}>Leaderboard</a>
-          </Link>
+          <Link href="/leaderboard" className={styles.navLink}>Leaderboard</Link>
         </li>
       </ul>
     </nav>
