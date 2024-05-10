@@ -35,14 +35,14 @@ export default function Home() {
         <h1 className="text-4xl font-bold mb-6">All Flashcards</h1>
         <div className="grid grid-cols-3 gap-4">
           {flashcards.map((flashcard, index) => (
-            <div key={index} className="card">
-              <div className="card-front">{flashcard.front}</div>
-              <div className="card-back">{flashcard.back}</div>
+            <div key={flashcard.id} className="card bg-white shadow-lg rounded-lg p-4 m-2">
+              <div className="card-front text-lg font-semibold p-2 border-b-2">{flashcard.front}</div>
+              <div className="card-back text-sm p-2">{flashcard.back}</div>
             </div>
           ))}
         </div>
       </main>
-      <footer className="text-center py-4">@Copyright 2024 Flash Card App</footer>
+      {/* Removed duplicate footer */}
     </div>
   );
 }
