@@ -20,6 +20,7 @@ export default function RootLayout({ children }) {
         {children}
         <footer>
           {/* Footer content goes here */}
+          <p>© 2024 Kids Trivia Game. All rights reserved.</p>
         </footer>
       </body>
     </html>
