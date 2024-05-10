@@ -1,6 +1,12 @@
 import { useState } from 'react';
-import TriviaQuestions from '../components/TriviaQuestions'; // Import the TriviaQuestions component
+import dynamic from 'next/dynamic';
 
+// Dynamically import TriviaQuestions with SSR disabled
+const TriviaQuestions = dynamic(() => import('../components/TriviaQuestions'), {
+  ssr: false,
+});
+
+/* use client */
 export default function Home() {
   const [name, setName] = useState('');
   const [gameStarted, setGameStarted] = useState(false); // State to track if the game has started
@@ -36,7 +42,7 @@ export default function Home() {
           </button>
         </form>
       ) : (
-        <TriviaQuestions /> // Render the TriviaQuestions component when the game starts
+        <TriviaQuestions />
       )}
     </main>
   );
