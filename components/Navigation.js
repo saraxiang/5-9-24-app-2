@@ -6,12 +6,12 @@ const Navigation = () => {
     <nav className={styles.navbar}>
       <ul className={styles.navList}>
         <li className={styles.navItem}>
-          <Link href="/">
+          <Link href="/" legacyBehavior>
             <a className={styles.navLink}>Play Game</a>
           </Link>
         </li>
         <li className={styles.navItem}>
-          <Link href="/leaderboard">
+          <Link href="/leaderboard" legacyBehavior>
             <a className={styles.navLink}>Leaderboard</a>
           </Link>
         </li>
