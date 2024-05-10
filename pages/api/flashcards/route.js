@@ -1,7 +1,7 @@
 // This is a mock API endpoint for creating flashcards
 // In a real application, this would involve database operations
 
-export function POST(req, res) {
+export default function handler(req, res) {
   // Log the req and req.body object for debugging
   console.log('req object:', req);
   console.log('req.body before parsing:', req.body);
@@ -53,10 +53,4 @@ export function POST(req, res) {
     // Send a response to indicate an internal server error
     res.status(500).json({ message: 'Internal Server Error', error: error.message, stack: error.stack });
   }
-}
-
-export function GET(req, res) {
-  // TODO: Retrieve and send all flashcards from the database
-  // For now, we'll just send a placeholder response
-  res.status(200).json({ message: 'Retrieved all flashcards successfully!' });
 }
